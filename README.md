@@ -1,7 +1,8 @@
 # Unity Project of the HAD Simulator
 
-Current Version: Unity 2019.3.7
-Required Unity Version: 2019.3 or 2019.4
+Current Version: Unity 2019.3.7  
+Required Unity Version: 2019.3 or 2019.4  
+Builded Version is available in Build/  
 
 ---
 ## Required Assets
