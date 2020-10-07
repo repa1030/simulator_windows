@@ -1,0 +1,17 @@
+# ignore temporary folder
+Temp/
+
+# ignore the Libraries
+Library/
+
+# ignore Local Packages
+LocalPackages/
+
+# ignore Terrain Auto Upgrade Files
+Assets/_TerrainAutoUpgrade*
+
+# ignore Visual Studio files
+*.sln
+*.csproj
+.vs/
+obj/
