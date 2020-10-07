@@ -12,6 +12,18 @@ Required Unity Version: 2019.3 or 2019.4
 <https://assetstore.unity.com/packages/3d/environments/urban/highway-construction-set-4246>
 
 ---
+## Included Assets
+
+* ROS# - Siemens:  
+<https://github.com/siemens/ros-sharp/tree/master/Unity3D/Assets>
+* Low-poly Civilian vehicle #5 - Pro 3D models:  
+<https://assetstore.unity.com/packages/3d/vehicles/land/low-poly-civilian-vehicle-5-124987>
+* ProgressBar Pack - upln:  
+<https://assetstore.unity.com/packages/tools/gui/progressbar-pack-120981>
+* Wispy Skybox - Mundus:  
+<https://assetstore.unity.com/packages/2d/textures-materials/sky/wispy-skybox-21737>
+
+---
 ## Setting up the Project
 
 * Make sure you have installed Git on your PC:  
