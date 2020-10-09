@@ -2,7 +2,9 @@
 
 Current Version: Unity 2019.3.7  
 Required Unity Version: 2019.3 or 2019.4  
-Builded Version is available in Build/  
+
+_Builded Version for ROS Melodic is available in Builds/Melodic/_  
+_Builded Version for ROS Noetic is available in Builds/Noetic/_  
 
 ---
 ## Required Assets
