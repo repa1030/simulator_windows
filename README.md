@@ -1,12 +1,12 @@
 # Unity Project of the HAD Simulator
 
+**Go [here](https://github.com/repa1030/simulator_ubuntu) for the ROS environment of the simulator.**  
 Current Version: Unity 2019.3.7  
 Required Unity Version: 2019.3 or 2019.4  
 
 _Builded Version for ROS Melodic is available in Builds/Melodic/_  
 _Builded Version for ROS Noetic is available in Builds/Noetic/_  
 
----
 ## Required Assets
 
 * Wheel Controller 3D - NWH Coding (for the wheel colliders, see Assets/WheelController):  
@@ -14,7 +14,6 @@ _Builded Version for ROS Noetic is available in Builds/Noetic/_
 * Highway Construction Set from  (for the environment, see Assets/HighwayContructionSet):  
 <https://assetstore.unity.com/packages/3d/environments/urban/highway-construction-set-4246>
 
----
 ## Included Assets
 
 * ROS# - Siemens:  
@@ -26,7 +25,6 @@ _Builded Version for ROS Noetic is available in Builds/Noetic/_
 * Wispy Skybox - Mundus:  
 <https://assetstore.unity.com/packages/2d/textures-materials/sky/wispy-skybox-21737>
 
----
 ## Setting up the Project
 
 * Make sure you have installed Git on your PC:  
@@ -44,7 +42,6 @@ _Builded Version for ROS Noetic is available in Builds/Noetic/_
 * Inside the Unity Hub press "Add" and choose the "simulator_windows" directory
 * Start for the first time (may take couple of minutes)
 
----
 ## Start of the Simulation in Editor
 
 * Open the scene "MainMenu" that is located under Assets/Scenes
@@ -54,7 +51,6 @@ _Builded Version for ROS Noetic is available in Builds/Noetic/_
     * Push the save button
 * Choose the desired scene
 
----
 ## Build the Simulator
 
 * Go to "File" -> "Build Settings..."
