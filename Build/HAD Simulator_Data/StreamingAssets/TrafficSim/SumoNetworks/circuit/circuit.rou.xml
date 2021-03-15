@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- vehicle types -->
+    <vType id="EgoVehicle" vClass="passenger" guiShape="passenger/sedan" laneChangeModel="LC2013" carFollowModel="Krauss" length="4.63" width="1.76" minGap="2.5" tau="1.0" speedFactor="100.0" speedDev="0.0" color="255,255,255" lcStrategic="00" lcCooperative="0" lcSpeedGain="00" lcKeepRight="90" lcLookaheadLeft="00" lcSpeedGainLookahead="00" sigma="1.0" decel="1.5" emergencyDecel="1.5" />
+    <vType id="Moyoda"   vClass="passenger" guiShape="passenger/sedan" laneChangeModel="LC2013" carFollowModel="Krauss" length="4.26" width="1.71" minGap="2.5" tau="1.0" speedFactor="normc(1.00,1.50,0.80,1.20)" lcStrategic="25" lcCooperative="1" lcSpeedGain="10" lcKeepRight="30" lcLookaheadLeft="10" lcSpeedGainLookahead="15" sigma="0.0" />
+    <vType id="Toyota"   vClass="passenger" guiShape="passenger/sedan" laneChangeModel="LC2013" carFollowModel="Krauss" length="4.31" width="1.79" minGap="2.5" tau="1.0" speedFactor="normc(1.00,1.50,0.80,1.20)" lcStrategic="25" lcCooperative="1" lcSpeedGain="10" lcKeepRight="30" lcLookaheadLeft="10" lcSpeedGainLookahead="15" sigma="0.0" />
+    <vType id="Mercedes" vClass="passenger" guiShape="passenger/sedan" laneChangeModel="LC2013" carFollowModel="Krauss" length="4.63" width="1.76" minGap="2.5" tau="1.0" speedFactor="normc(1.00,1.50,0.80,1.20)" lcStrategic="25" lcCooperative="1" lcSpeedGain="10" lcKeepRight="30" lcLookaheadLeft="10" lcSpeedGainLookahead="15" sigma="0.0" />
+    <vType id="Truck" 	 vClass="truck"     guiShape="truck"           laneChangeModel="LC2013" carFollowModel="Krauss" length="6.40" width="2.44" minGap="2.5" tau="1.0" speedFactor="normc(1.00,1.50,0.80,1.20)" lcStrategic="25" lcCooperative="1" lcSpeedGain="10" lcKeepRight="30" lcLookaheadLeft="10" lcSpeedGainLookahead="15" sigma="0.0" maxSpeed="16.0" />
+
+    <!-- routes -->
+    <route edges="O_E0 O_E2" color="yellow" id="route_outside"/>
+    <route edges="I_E0 I_E2" color="green"  id="route_inside" />
+
+    <!-- vehicle flows (id must be identical with the prefab name in Unity!) -->
+    <!-- outside circuit -->
+    <flow id="MoyodaBE" type="Moyoda" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,150,255" />
+    <flow id="MoyodaGN" type="Moyoda" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="17,197,0" />
+    <flow id="MoyodaGY" type="Moyoda" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="132,132,132" />
+    <flow id="MoyodaPK" type="Moyoda" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="250,0,203" />
+    <flow id="MoyodaRD" type="Moyoda" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="255,0,0" />
+    <flow id="ToyotaWT" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="255,255,255" />
+    <flow id="ToyotaRD" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="128,0,25" />
+    <flow id="ToyotaPL" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="135,0,110" />
+    <flow id="ToyotaGY" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="120,120,120" />
+    <flow id="ToyotaGD" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="142,126,56" />
+    <flow id="ToyotaBE" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="4,0,75" />
+    <flow id="ToyotaBK" type="Toyota" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,0,0" />
+    <flow id="MercedesWT" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="1,1,1" />
+    <flow id="MercedesSR" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="173,173,173" />
+    <flow id="MercedesPP" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="125,0,176" />
+    <flow id="MercedesPK" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="255,0,242" />
+    <flow id="MercedesGY" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="77,77,77" />
+    <flow id="MercedesGN" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="32,87,34" />
+    <flow id="MercedesDB" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,27,130" />
+    <flow id="MercedesLB" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="55,157,178"/>
+    <flow id="MercedesBW" type="Mercedes" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="75,50,47" />
+    <flow id="TruckWT" type="Truck" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="255,255,255" />
+    <flow id="TruckBL" type="Truck" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,126,255" />
+    <flow id="TruckGN" type="Truck" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,255,22" />
+    <flow id="TruckGY" type="Truck" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="132,132,132" />
+    <flow id="TruckBK" type="Truck" begin="0.00" from="O_E0" to="O_E2" number="2" probability="0.03" color="0,0,0" />
+    <!-- inside circuit -->
+    <flow id="MoyodaWT" type="Moyoda" begin="0.00" from="I_E0" to="I_E2" number="4" probability="0.03" color="255,255,255" />
+    <flow id="ToyotaGN" type="Toyota" begin="0.00" from="I_E0" to="I_E2" number="4" probability="0.03" color="4,89,0" />
+    <flow id="MercedesRD" type="Mercedes" begin="0.00" from="I_E0" to="I_E2" number="2" probability="0.03" color="255,0,0" />
+    <flow id="TruckYW" type="Truck" begin="0.00" from="I_E0" to="I_E2" number="4" probability="0.03" color="242,248,46" />
+
+</routes>

@@ -21,9 +21,27 @@ public class RosConnectorInit : MonoBehaviour
         if (publishing)
         {
             RosSharp.RosBridgeClient.RosConnector ros = GetComponent<RosSharp.RosBridgeClient.RosConnector>();
+
             string IP = PlayerPrefs.GetString("ip", "192.168.0.3");
             string Port = PlayerPrefs.GetString("port", "9090");
             ros.RosBridgeServerUrl = "ws://" + IP + ":" + Port;
+
+            int serializer = PlayerPrefs.GetInt("serializer", 0);
+            switch (serializer)
+            {
+                case 0:
+                    ros.Serializer = RosSharp.RosBridgeClient.RosSocket.SerializerEnum.Newtonsoft_BSON;
+                    break;
+                case 1:
+                    ros.Serializer = RosSharp.RosBridgeClient.RosSocket.SerializerEnum.Newtonsoft_JSON;
+                    break;
+                case 2:
+                    ros.Serializer = RosSharp.RosBridgeClient.RosSocket.SerializerEnum.Microsoft;
+                    break;
+                default:
+                    ros.Serializer = RosSharp.RosBridgeClient.RosSocket.SerializerEnum.Newtonsoft_BSON;
+                    break;
+            }
         }
         else
         {

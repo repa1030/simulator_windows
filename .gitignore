@@ -1,3 +1,17 @@
+# ignore python cache and compiled
+__pycache__/
+__pycache__.meta
+*.py.meta
+*.py[cod]
+*$py.class
+
+# ignore SUMO meta files
+*.net.xml.meta
+*.rou.xml.meta
+*.add.xml.meta
+*.sumocfg.meta
+*.cfg.meta
+
 # ignore temporary folder
 Temp/
 
@@ -6,6 +20,9 @@ Library/
 
 # ignore Local Packages
 LocalPackages/
+
+# ignore Logging Data
+Logs/
 
 # ignore Terrain Auto Upgrade Files
 Assets/_TerrainAutoUpgrade*

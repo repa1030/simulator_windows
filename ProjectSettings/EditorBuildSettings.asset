@@ -13,8 +13,5 @@ EditorBuildSettings:
     guid: afedcefd9d785ea4fa1db77700f619c9
   - enabled: 1
     path: Assets/Scenes/Circuit.unity
-    guid: ea91eb5d5b9a20340911c7ee3db78aa9
-  - enabled: 1
-    path: Assets/Scenes/Circuit_Night.unity
-    guid: 5a17e1bf1a9c78040b898e7547aece72
+    guid: c6ca46865322fd444bd64778afca366a
   m_configObjects: {}

@@ -1,0 +1,29 @@
+<configuration>
+
+    <gui-settings-file value="gui-settings.cfg" />
+
+    <input>
+        <net-file value="circuit.net.xml" />
+        <route-files value="circuit.rou.xml" />
+        <additional-files value="circuit.add.xml" />
+    </input>
+
+    <processing>
+        <time-to-teleport value="-1" />
+        <lanechange.duration value="4" />
+    </processing>
+
+    <time>
+        <begin value="0" />
+        <end value="999999999" />
+    </time>
+
+    <step-length value="0.04" />
+
+    <report>
+        <xml-validation value="never" />
+        <duration-log.disable value="true" />
+        <no-step-log value="true" />
+    </report>
+
+</configuration>

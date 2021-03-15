@@ -70,12 +70,6 @@ public class CarController : MonoBehaviour
     private Vector3 m_centerOfMass;
     private Vector3 m_prevOffset = Vector3.zero;
     private float m_steerMin_velocity;
-    private float m_A_x_cW;
-    private float m_rhoAir;
-    private float m_airResist;
-    private float m_gravity;
-    private float m_fR;
-    private float m_rollResist;
 
     // Public variables
     [Header("Vehicle and Axis Settings ----------")]
@@ -83,8 +77,6 @@ public class CarController : MonoBehaviour
     public List<NewAxis> VehicleAxis;
     public Vector3 centerOfMassOffset = Vector3.zero;
     public UIFunctions ADASControl;
-    public float drag = 0.22f;
-    public float rollResistFactor = 0.014f;
     [Header("Physics Configuration --------------")]
     public bool velocitySteerLimiting = true;
     public float maxSteerAngle = 29.0f; // Wendekreis 11m: ~29°
@@ -96,7 +88,6 @@ public class CarController : MonoBehaviour
     public float maxVelocity = 100.0f;
     public float brakeForce = 1500.0f;
     public float motorForce = 1000.0f;
-    public float downforce = 100.0f;
     public float antiRollBarForce = 13000.0f;
 
 
@@ -119,12 +110,6 @@ public class CarController : MonoBehaviour
         m_max_steerWheel_angle = -maxSteeringWheelTurns * 360.0f;
         m_brake_signal = false;
         m_reverse_singal = false;
-        m_rhoAir = 1.3f;
-        m_A_x_cW = drag;
-        m_airResist = 0.0f;
-        m_fR = rollResistFactor;
-        m_gravity = 9.81f;
-        m_rollResist = 0.0f;
         m_driveReverse = false;
         m_steerMin_velocity = 1 / minSteerAngleVelocity;
     }
@@ -149,25 +134,7 @@ public class CarController : MonoBehaviour
             Steer(axis);
             ApplyAntiRollBar(axis.controllerLeft, axis.controllerRight);
         }
-        AddDownForce();
-        AddDriveResist();
         SteeringWheelRotation();
-    }
-
-    private void AddDriveResist()
-    {
-        m_A_x_cW = drag;
-        m_fR = rollResistFactor;
-        m_airResist = 0.5f * m_rhoAir * m_A_x_cW * m_velocity.z * m_velocity.z * Mathf.Sign(m_velocity.z);
-        if (m_velocity.z <= -0.1 || m_velocity.z >= 0.1)
-        {
-            m_rollResist = this.GetComponent<Rigidbody>().mass * m_fR * m_gravity * Mathf.Sign(m_velocity.z);
-        }
-        else
-        {
-            m_rollResist = 0;
-        }
-        this.GetComponent<Rigidbody>().AddForce(-transform.forward * (m_airResist + m_rollResist));
     }
    
     // Get input data from keyboard and from unity
@@ -212,7 +179,7 @@ public class CarController : MonoBehaviour
 
         // Read velocity and convert to km/h
         m_velocity = this.transform.InverseTransformDirection(GetComponent<Rigidbody>().velocity) * 60 * 60 / 1000;
-        if (m_velocity.z < -1/3.6 && m_driveReverse)
+        if (m_driveReverse)
         {
             m_reverse_singal = true;
         }
@@ -405,7 +372,6 @@ public class CarController : MonoBehaviour
 
     }
 
-
     private void ApplyAntiRollBar(WheelController wheelControllerLeft, WheelController wheelControllerRight)
     {
         if (!wheelControllerLeft.springOverExtended &&
@@ -423,11 +389,6 @@ public class CarController : MonoBehaviour
             if (wheelControllerRight.isGrounded)
                 wheelControllerRight.parent.GetComponent<Rigidbody>().AddForceAtPosition(wheelControllerRight.wheel.up * arf, wheelControllerRight.wheel.worldPosition);
         }
-    }
-
-    private void AddDownForce()
-    {
-        this.GetComponent<Rigidbody>().AddForce(-transform.up * downforce * this.GetComponent<Rigidbody>().velocity.magnitude);
     }
 
     private void CenterOfMass()
