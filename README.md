@@ -6,7 +6,6 @@ Required Unity Version: 2019.4.x
 
 _Standalone Version is available in Build/_  
 
----
 ## Required Assets
 
 * Wheel Controller 3D - NWH Coding (for the wheel colliders, see Assets/WheelController):  
@@ -14,7 +13,6 @@ _Standalone Version is available in Build/_
 * Highway Construction Set from  (for the environment, see Assets/HighwayContructionSet):  
 <https://assetstore.unity.com/packages/3d/environments/urban/highway-construction-set-4246>
 
----
 ## Included Assets
 
 * ROS# - Siemens:  
@@ -28,7 +26,6 @@ _Standalone Version is available in Build/_
 * Realistic Tree 9 - Pixel Games:  
 <https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622>
 
----
 ## Setting up the Project
 
 * Make sure you have installed Git on your PC:  
@@ -53,14 +50,12 @@ _Standalone Version is available in Build/_
     `pip install websockets`
 * Start for the first time (may take couple of minutes)
 
----
 ## Start of the Simulation in Editor
 
 * Open the scene "MainMenu" that is located under Assets/Scenes
 * Change the settings if required
 * Start the simulation by pushing the start button
 
----
 ## Build the Simulator
 
 * Go to "File" -> "Build Settings..."
